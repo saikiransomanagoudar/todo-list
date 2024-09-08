@@ -1,36 +1,87 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Todo List App
 
-## Getting Started
+A simple and efficient Todo List application built with **Next.js**, **React**, **Convex**, **TailwindCSS**, and **TypeScript**. This application helps users manage their tasks in an organized manner.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- Add, update, and delete tasks.
+- Mark tasks as complete.
+- Responsive UI with TailwindCSS.
+- Utilizes Convex for backend storage.
+- Built using modern front-end technologies: Next.js, React, and TypeScript.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Project Setup
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Prerequisites
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- [Node.js](https://nodejs.org/) (v14 or higher)
+- npm (comes with Node.js) or [yarn](https://yarnpkg.com/)
 
-## Learn More
+### Installation
 
-To learn more about Next.js, take a look at the following resources:
+1. Clone the repository:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+`git clone https://github.com/saikiransomanagoudar/todo-list.git`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+`cd todo-list`
 
-## Deploy on Vercel
+2. Install the dependencies:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+`npm install`
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+or
+
+`yarn install`
+
+### Running the Development Server
+
+To run the app locally:
+
+`npm run dev`
+
+or
+
+`yarn dev`
+
+The app will be available at [http://localhost:3000](http://localhost:3000).
+
+### Building for Production
+
+To create an optimized build:
+
+`npm run build`
+
+or
+
+`yarn build`
+
+To start the production server:
+
+`npm run start`
+
+or
+
+`yarn start`
+
+## Technologies Used
+
+- **Next.js**: React framework for building fast and optimized web applications.
+- **React**: JavaScript library for building user interfaces.
+- **TailwindCSS**: Utility-first CSS framework for responsive designs.
+- **TypeScript**: Typed superset of JavaScript for better code quality.
+- **Convex**: Backend as a service for managing application state.
+
+## Folder Structure
+
+- `src/`: Contains the main application code (components, pages, etc.).
+- `convex/`: Convex backend configuration.
+- `.env.local`: Environment variables for sensitive data (ignored by Git).
+- `tailwind.config.ts`: TailwindCSS configuration file.
+- `tsconfig.json`: TypeScript configuration file.
+- `package.json`: Project dependencies and scripts.
+
+## Environment Variables
+
+Ensure you set up the following environment variables in a `.env.local` file:
+
+`NEXT_PUBLIC_API_KEY=your_api_key`
