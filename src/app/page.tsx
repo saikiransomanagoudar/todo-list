@@ -25,12 +25,17 @@ export default function Home() {
             key={index}
             title={title} 
             description={description} 
-            completed={completed} 
-            index={index} // Add the 'index' parameter
+            completed={completed}            
             onCompleteChanged={(newValue) => {
               setTodos(prev => {
                 const newTodos = [...prev];
                 newTodos[index].completed = newValue;
+                return newTodos;
+              })
+            }}
+            onRemove={() => {
+              setTodos(prev => {
+                const newTodos = [...prev].filter((_, i) => i !== index);
                 return newTodos;
               })
             }}
@@ -54,15 +59,17 @@ function ToDoItem({
   title,
   description,
   completed,
-  onCompleteChanged
+  onCompleteChanged,
+  onRemove
 }: {
   title: string;
   description: string;
-  complete: boolean;
+  completed: boolean;
   onCompleteChanged: (newValue: boolean) => void;
+  onRemove: () => void;
 }) {
   return (
-    <li className="flex gap-2 border rounded p-2">
+    <li className="w-full flex items-center gap-2 border rounded p-2">
       <input
         type="checkbox"
         checked={completed}
@@ -74,7 +81,9 @@ function ToDoItem({
         <p className="font-semibold">{title}</p>
         <p className="text-sm text-gray-600">{description}</p>
       </div>
-      
+      <div className="ml-auto">
+        <button type="button" className="text-red-500" onClick={() => onRemove()}>Remove</button>
+      </div>
     </li>
   );
 }
