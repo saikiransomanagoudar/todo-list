@@ -29,7 +29,16 @@ export const updateTodo = mutation({
     },
     handler: async (ctx, args) => {
         await ctx.db.patch(args.id, {
-            completed: args.completed
+            completed: args.completed 
         });
+    }
+});
+
+export const deleteTodo = mutation({
+    args: {
+        id: v.id("todos")
+    },
+    handler: async (ctx, args) => {
+        await ctx.db.delete(args.id);
     }
 });
